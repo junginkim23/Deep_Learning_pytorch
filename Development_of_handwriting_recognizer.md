@@ -1,0 +1,214 @@
+```python
+import matplotlib.pyplot as plt
+import torchvision
+
+mnist = torchvision.datasets.MNIST(root='./data', train=True, download=True)
+```
+
+
+```python
+print(mnist.data.size()) #총 Mnist 데이터 크기 
+print(mnist.targets.size()) #0~9까지 데이터
+print(mnist.targets[0])
+print(mnist.data[1000])
+plt.imshow(
+    mnist.data[59999],
+    cmap="Greys",
+    interpolation="nearest", #interpolation(보간법): 알고 있는 데이터 값들을 이용하여 모르는 값을 추정하는 방법의 한 종류이다. 
+    #종류:linear interpolation(끝점의 값이 주어졌을 때 그 사이에 위치한 값을 추정하기 위하여 직선 거리에 따라 선형적으로 계산하는 방법이다.) & Nearest interpolation(새로운 지점 또는 한 지점의 값을 결정하는 데 있어서 주변의 분포한 지점의 값을 분석하여 데이터를 결정함.)
+    )
+plt.show()
+```
+
+
+```python
+# 관련 패키지 import 
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torchvision
+import torchvision.transforms as transforms
+import matplotlib.pyplot as plt 
+```
+
+
+```python
+# Device configuration, gpu 사용 가능한 경우 device를 gpu로 설정하고 사용 불가능하면 cpu로 설정
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print(torch.cuda.get_device_name(device))
+
+```
+
+    Tesla P100-PCIE-16GB
+    
+
+
+```python
+# Hyper-parameters -> 사람이 지정해주는 변수들
+input_size = 784
+hidden_size = 500
+num_classes = 10
+num_epochs = 5
+batch_size = 100
+learning_rate = 0.001
+```
+
+
+```python
+# 파이토치에서 제공하는 MNIST dataset
+train_dataset = torchvision.datasets.MNIST(root='./data',train=True,  #6만장 가지고 옴
+                                           transform=transforms.ToTensor(), download=True)
+test_dataset = torchvision.datasets.MNIST(root='./data', train=False, #1만장 가지고 옴 
+                                          transform=transforms.ToTensor())
+print(type(test_dataset))
+```
+
+    torchvision.datasets.mnist.MNIST
+    
+
+
+```python
+# 배치 단위로 데이터를 처리해주는 Data loader
+train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
+                                          batch_size=batch_size,
+                                          shuffle=True)
+test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
+                                         batch_size=batch_size,
+                                         shuffle=False) #섞을 필요가 없다. 
+                                        
+len(test_loader)
+```
+
+
+
+
+    100
+
+
+
+
+```python
+class NeuralNet(nn.Module):
+  def __init__(self, input_size, hidden_size, num_classes):
+    super(NeuralNet, self).__init__()
+    #model을 만들어주는 과정, 필요한 네트워크 만듬. 각각 layer 
+    self.fc1 = nn.Linear(input_size, hidden_size)
+    self.fc2 = nn.Linear(hidden_size, hidden_size)
+    self.fc3 = nn.Linear(hidden_size, num_classes)
+    
+    #forward 과정 , 연결하고 activation function 적용. 
+  def forward(self, x):
+    out = F.relu(self.fc1(x)) #fully connected->fc1
+    out = F.relu(self.fc2(out))
+    out = self.fc3(out)
+    return out
+```
+
+
+```python
+model = NeuralNet(input_size, hidden_size, num_classes).to(device) # 모델을 지정한 device로 올려줌 
+```
+
+
+```python
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate) #w가중치를 learning rate로 업데이트 -> 업데이트 하는 방법
+# model.parameters -> 가중치 w들을 의미 
+```
+
+
+```python
+model.parameters
+```
+
+
+
+
+    <bound method Module.parameters of NeuralNet(
+      (fc1): Linear(in_features=784, out_features=500, bias=True)
+      (fc2): Linear(in_features=500, out_features=500, bias=True)
+      (fc3): Linear(in_features=500, out_features=10, bias=True)
+    )>
+
+
+
+
+```python
+loss_arr = []
+total_step = len(train_loader) #total_step -> Iteration과 동일
+```
+
+
+```python
+total_step
+```
+
+
+
+
+    600
+
+
+
+
+```python
+for epoch in range(num_epochs):
+  for i, (images, labels) in enumerate(train_loader):
+    # Move tensors to the configured device
+    images = images.reshape(-1, 28*28).to(device) #-1: batch size 의미 
+    labels = labels.to(device)
+	# Forward pass
+    outputs = model(images)
+    loss = criterion(outputs, labels)
+	# Backward and optimize
+    optimizer.zero_grad() # iteration 마다 gradient를 0으로 초기화
+    loss.backward() # 가중치 w에 대해 loss를 미분
+    optimizer.step() # 가중치들을 업데이트
+
+    if (i+1) % 100 == 0:
+      loss_arr.append(loss)
+      print('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}'
+          .format(epoch+1, num_epochs, i+1, total_step, loss.item()))
+```
+
+
+```python
+# Test the model #모델 확인
+# In test phase, we don't need to compute gradients (for memory efficiency)
+with torch.no_grad(): #forward backward가 나타나는 그라디언트 그래프를 그리지마라.
+  correct = 0
+  total = 0
+  for images, labels in test_loader:
+    images = images.reshape(-1, 28*28).to(device) 
+    labels = labels.to(device)
+    outputs = model(images)
+  _, predicted = torch.max(outputs.data, 1) 
+  total += labels.size(0)
+  correct += (predicted == labels).sum().item() #맞은 개수를 반환 
+
+print('Accuracy of the network on the 10000 test images: {} %'.format(100 * correct / total))
+print(type(labels))
+print(type(images))
+```
+
+    Accuracy of the network on the 10000 test images: 99.0 %
+    <class 'torch.Tensor'>
+    <class 'torch.Tensor'>
+    
+
+
+```python
+# Save the model checkpoint #모델 저장
+torch.save(model.state_dict(), 'model.ckpt')
+plt.plot(loss_arr)
+plt.show()
+print(model.state_dict())
+```
+
+
+```python
+print(model.parameters())
+```
+
+    <generator object Module.parameters at 0x7efd856a8a98>
+    
