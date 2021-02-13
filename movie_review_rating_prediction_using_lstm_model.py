@@ -31,7 +31,6 @@ import nltk
 nltk.download('punkt')
 #This tokenizer divides a text into a list of sentences, by using an unsupervised algorithm to build a model for abbreviation words, collocations, and words that start sentences.
 #The NLTK data package includes a pre-trained Punkt tokenizer for English.
-
 import numpy as np
 import torch.nn as nn
 import torch.optim as optim
