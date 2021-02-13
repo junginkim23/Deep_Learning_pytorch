@@ -27,7 +27,6 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
 """# 생성자 & 판별자"""
-
 # Networks G & D
 class dcgan_G(nn.Module):
     def __init__(self, z_dim, img_size):
