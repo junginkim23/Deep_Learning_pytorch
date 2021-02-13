@@ -62,7 +62,6 @@ class vanilla_D(nn.Module):
         return out
 
 """# Loss 클래스"""
-
 class G_Loss(nn.Module):
     def __init__(self, device):
         super(G_Loss, self).__init__()
