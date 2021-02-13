@@ -29,7 +29,6 @@ import torch.nn.functional as F
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
-
 """# 데이터 불러오기"""
 
 SOS_token = 0 # Start of Sentence 
