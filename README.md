@@ -1,4 +1,4 @@
-#Deep Learning with pytorch
+# Deep Learning with pytorch
 
 Foundations of diverse neural networks, AI SCHOOL course 
 
