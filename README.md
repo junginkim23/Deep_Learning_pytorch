@@ -307,27 +307,27 @@ Allocate information to the dictionary name_age, which is the age, and then prin
                 - Distribution approximation function network that similarly expresses the distribution of training data
         - How to make G and D fight hostile?
         - Equation?
-                - <img src="https://github.com/junginkim23/Deep_Learning_pytorch/blob/master/수식설명.PNG" width=300>
-                - If Excellent D, Try to make the equation maximum(0)  
-                - If Excellent G, Try to make the equation minimum(−∞)
+            - <img src="https://github.com/junginkim23/Deep_Learning_pytorch/blob/master/수식설명.PNG" width=300>
+            - If Excellent D, Try to make the equation maximum(0)  
+            - If Excellent G, Try to make the equation minimum(−∞)
         - There are several types of GAN
             1) Vanilla GAN
             - concept
-                    - Use default MLP
+                - Use default MLP
             2) Conditional GAN
             - concept
-                    - Insert The label that is the correct answer into D & G network together
-                    - Label becomes a condition in the process of achieving its purpose! (both G & D)
+                - Insert The label that is the correct answer into D & G network together
+                - Label becomes a condition in the process of achieving its purpose! (both G & D)
             3) DCGAN
             - concept 
-                    - Adjust CNN into GAN structure
-                    - Generator uses Transpose Convolutional Network
-                    - Discriminator uses Convolutional Network 
-                    - It has guideline for stable Deep Convolutional GANs
-                    - Operation can be performed using a random number(z)
+                - Adjust CNN into GAN structure
+                - Generator uses Transpose Convolutional Network
+                - Discriminator uses Convolutional Network 
+                - It has guideline for stable Deep Convolutional GANs
+                - Operation can be performed using a random number(z)
             4) Conditional DCGAN
             - concept
-                    - Conditioanl GAN + Deep Convolutional GAN
+                - Conditioanl GAN + Deep Convolutional GAN
 - **Pytorch Practice**
     - Train all types of GAN and then confirm the results.
 
