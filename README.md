@@ -104,7 +104,7 @@ Allocate information to the dictionary name_age, which is the age, and then prin
 ## *Week 4*
 ---
 - **About Python**
-    - Class
+    - Class 1
 - **Theory of Deep Learning**
     - CNN(Convolution Neural Network)
 - **Pythorch**
@@ -135,3 +135,65 @@ Allocate information to the dictionary name_age, which is the age, and then prin
 
 ## *Week 6*
 --- 
+- **About Python**
+    - Class 2
+        - Character of Class : Inheritance
+- **Theory of Deep Learning**
+    - Batch Normalization 
+- **Pytorch**
+    - Implement ResNet 18 
+>Assignment 
+1) Make ScienCalculator class that inherits Calculator class 
+    - Add function - pow()_Calculate squared
+    - Redefine 'class' by using method overriding 
+    - Print the result by using 5 methods after creating ScienCalculator class 
+
+2) Reimplement ResNet - 18 and then train the network using CIFAR 10 Dataset 
+3) Implement ResNet - 101 
+
+## *Week 7*
+---
+- **About Python**
+    - Numpy
+    - NLTK
+    - pre-processing 
+        - tokenize
+        - Eliminate stopwords 
+        - stemming  
+- **Theory of Deep Learning**
+    - CNN-based text classification
+        - _김훈의 CNN_
+- **Pytorch**
+    - Movie review rating prediction using CNN model
+
+>Assignment
+1) Find the similarity between the 3 given sentences.
+    - **step**
+        - pre-processing
+        - Implement Cosine similarity function
+        - Make Doc-word matrix 
+        - Finding the Similarity 
+2) Target 90 % by adjusting Hyper parameter (CNN Classifier)
+
+## *Week 8*
+---
+- **Using python**
+    - Collect Instagram posts 
+        - Hashtag-based image and text collection
+- **Theory of Deep Learning 
+    - Basic Theory of **Word2Vec**
+        - What is one-hot encoding 
+        - CBOW
+        - Skip-Gram
+- **Pytorch**
+    -practicing Word2vec
+        - Training Word2Vec through gensim  
+
+>Assignment 
+1) Crawling Instagram posting images based more than 5 hashtags 
+2) confirm the result by calculating more than 10 word analogy
+3) Try to score by putting more than 10 similarity pairs
+    - ex) 'Benz' & 'BMW' 
+
+## *Week 9* 
+---
