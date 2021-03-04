@@ -226,8 +226,8 @@ Allocate information to the dictionary name_age, which is the age, and then prin
 ## *Week 10*
 ---
 - **Practive Algorithms** 
-    [practice 1](https://www.acmicpc.net/problem/11650)
-    [practice 2](https://www.acmicpc.net/problem/1463)
+    - [practice 1](https://www.acmicpc.net/problem/11650)
+    - [practice 2](https://www.acmicpc.net/problem/1463)
 - **Theory of Deep Learning**
     - Basic Theory of RNN
         - About sequential data 
