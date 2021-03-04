@@ -307,7 +307,7 @@ Allocate information to the dictionary name_age, which is the age, and then prin
                 - Distribution approximation function network that similarly expresses the distribution of training data
         - How to make G and D fight hostile?
         - Equation?
-                - <img src="C:\Users\USER\Desktop\pytorch\수식설명.PNG" width=300>
+                - <img src="https://github.com/junginkim23/Deep_Learning_pytorch/blob/master/수식설명.PNG" width=300>
                 - If Excellent D, Try to make the equation maximum(0)  
                 - If Excellent G, Try to make the equation minimum(−∞)
         - There are several types of GAN
