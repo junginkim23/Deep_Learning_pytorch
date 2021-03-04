@@ -298,6 +298,7 @@ Allocate information to the dictionary name_age, which is the age, and then prin
     - Attention mechanism NMT 
 
 ## *Week 14*
+---
 - **GAN (Generative Adversarial Network)**
     - About GAN 
         - Origin of the name ['Generative', 'Adversarial', 'Network']
@@ -333,6 +334,7 @@ Allocate information to the dictionary name_age, which is the age, and then prin
     - Train all types of GAN and then confirm the results.
 
 ## *Week 15*
+---
 - **About Action Recognition**
 
                     
