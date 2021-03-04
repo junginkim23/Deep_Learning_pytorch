@@ -1,7 +1,7 @@
 # Deep Learning with pytorch
 
-Foundations of diverse neural networks, AI SCHOOL course 
-I write this to show what i have studied! 
+`Foundations of diverse neural networks, AI SCHOOL course.` 
+`I write this to show what i have studied!` 
 
 ## *Week 1*
 --- 
