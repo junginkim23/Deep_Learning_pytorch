@@ -62,7 +62,76 @@ else:
 ```
 2) Calculation Back propagation 
 
-## **Week 3**
+## *Week 3*
 ---
+- **About Python**
+    - List nesting('for' Statement)
+    - tuple
+    - 'While' Statement
+    - File I/O
+- **'Deep Learning' Learning Methodology**
+    - Early Stopping
+    - Weight Initialization
+    - Dropout
+    - Parameter Norm Penalties 
+    - Data Augmentation 
+- **Development of handwriting recognizer with hyperparameter adjustment**
+    - Epoch, Batch Size, Iterations 
+    - Training, Test Set 
+    - What is MNITST Dataset 
+>Assignment
+1) Using 'While' to make below problem
+``` 
+*
+**
+***
+****
+*****
+```
+2) Implement the below code in one line using list nesting.
+```py
+number = [1,2,3,4,5]
+result = []
+for n in numbers:
+    if n % 2 == 0:
+        result.append(n+2)
+```
+3) Read the given fileIO.txt file, Key is Last Name and Value is
+Allocate information to the dictionary name_age, which is the age, and then print it.
 
+4) Set my own Hyper Pameter to to learn MNIST Dataset 
 
+## *Week 4*
+---
+- **About Python**
+    - Class
+- **Theory of Deep Learning**
+    - CNN(Convolution Neural Network)
+- **Pythorch**
+    - Classification of MNIST data using CNN model 
+
+>Assignment
+1) Create a Calculator class that performs four arithmetic operations
+
+## *Week 5*
+---
+- **About Python**
+    - Web crawling 
+        - Using Beautiful Soap Package
+        - Using IMDB Dataset 
+- **Theory of Deep Learning**
+    - Representative model using CNN
+        - *_Just simple Theory_
+        - LeNet
+        - AlexNet
+        - GoogleNet
+        - ResNet
+        
+- **Pythorch**
+    - Classification of CIFAR-10 data using LeNet
+>Assignment 
+1) Dynamic crawl of 100 dates and save date.txt (feat. IMDB Dataset)
+2) Target 74 % by adjusting the hyperparameter(feat. LeNet)
+
+## *Week 6*
+--- 
