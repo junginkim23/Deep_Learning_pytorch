@@ -180,11 +180,12 @@ Allocate information to the dictionary name_age, which is the age, and then prin
 - **Using python**
     - Collect Instagram posts 
         - Hashtag-based image and text collection
-- **Theory of Deep Learning 
-    - Basic Theory of **Word2Vec**
+- **Theory of Deep Learning**
+    - Basic Theory of **Word2Vec** 1
         - What is one-hot encoding 
         - CBOW
         - Skip-Gram
+        - Why does it occur Imbalance overhead?
 - **Pytorch**
     -practicing Word2vec
         - Training Word2Vec through gensim  
@@ -197,3 +198,54 @@ Allocate information to the dictionary name_age, which is the age, and then prin
 
 ## *Week 9* 
 ---
+- **Data structure**
+    - Stack
+        - Concept of Stack 
+        - How to use Stack functions in python 
+            - ex)append(), pop() ..
+    - Queue 
+        - Concept of Queue
+        - How to use Queue functions in python 
+            - ex) append(), popleft(), appendleft(), pop() .. 
+- **Theory of Deep Learngin**
+    - Basic Theory of **Word2vec** 2 
+        - About Distributional hypothesis 
+        - Solutions for Imbalance overhead
+            1) Hierarchical softmax
+            2) Negative sampling 
+        - Additional Performance Enhancement Techniques 
+            - Subsampling 
+- **Pytorch**
+    - Calculate Word analogy score by training several cases 
+
+>Assignment 
+1) Target 35% 
+    - By increasing news dataset and iter, raise the score of word analogy task 
+2) Coding Test about stack & queue on 'programmers'
+
+## *Week 10*
+---
+- **Practive Algorithms** 
+    [practice 1](https://www.acmicpc.net/problem/11650)
+    [practice 2](https://www.acmicpc.net/problem/1463)
+- **Theory of Deep Learning**
+    - Basic Theory of RNN
+        - About sequential data 
+        - Concept of Recurrent Neural Network(RNN)
+        - RNN applications 
+            - Image Captioning
+            - Sentiment classification 
+            - Machine translation
+            - Question answering
+            - Language modeling 
+        - Bidirectional RNN 
+        - Limitation of RNN 
+        - How to classify Text using RNN 
+- **Pytorch**
+    - Movie review rating prediction using RNN model
+>Assignment 
+1) Target Accuracy 87% by adjusting hyper parameters of RNN 
+
+## *Week 11*
+---
+
