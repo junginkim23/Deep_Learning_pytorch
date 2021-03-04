@@ -335,15 +335,41 @@ Allocate information to the dictionary name_age, which is the age, and then prin
 
 ## *Week 15*
 ---
-- **About Action Recognition**
-
-                    
-
+- **Action Recognition**
+    - concept 
+        - A task to find out where the actions in the video belong to among actions within a specified category. 
+    - I train several datasets.
+        - UFC101
+        - HMDB51
+        - Kinetics
+        - Sport - 1M
+    - Before we study Action Recognition, we know what is the characters of video data. 
+        1) What is the video data?
+            - Set of images with a certain time interval
+        2) The existence of a time term can contain information that only one image does not have.
+        3) The meaning of spatial information in one image and
+            The meaning of temporal information in images must be well interpreted.
+    - There are two basic thesis on Action Recognition.
+        1) Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset
+            - CVPR 2017
+            - Google DeepMind
+            - [Link](https://arxiv.org/pdf/1705.07750.pdf)
         
-
-
-
-
-
-
-
+        2) A Closer Look at Spatiotemporal Convolutions for Action Recognition
+            - CVPR 2018
+            - FAIR (Facebook AI Research)
+            - [Link](https://arxiv.org/pdf/1711.11248.pdf)
+        
+    - Models for Action Recognition
+        - _Just simple theory._
+        - Conv2d + LSTM 
+            - Large-scale Video Classification with Convolutional Neural Networks
+        - Conv3d 
+            -Learning Spatiotemporal Features with 3D Convolutional Networks 
+        - Two stream
+            -Two-Stream Convolutional Networks for Action Recognition in Videos
+        - 3D - Fused Two Stream
+            - Convolutional two-stream network fusion for video action recognition
+        - R(2+1)D
+            -A Closer Look at Spatiotemporal Convolutions for Action Recognition
+    
