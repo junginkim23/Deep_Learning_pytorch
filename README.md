@@ -140,7 +140,7 @@ Allocate information to the dictionary name_age, which is the age, and then prin
         - Character of Class : Inheritance
 - **Theory of Deep Learning**
     - Batch Normalization 
-- **Pytorch**
+- **Pytorch Practice**
     - Implement ResNet 18 
 >Assignment 
 1) Make ScienCalculator class that inherits Calculator class 
@@ -163,7 +163,7 @@ Allocate information to the dictionary name_age, which is the age, and then prin
 - **Theory of Deep Learning**
     - CNN-based text classification
         - _김훈의 CNN_
-- **Pytorch**
+- **Pytorch Practice**
     - Movie review rating prediction using CNN model
 
 >Assignment
@@ -186,7 +186,7 @@ Allocate information to the dictionary name_age, which is the age, and then prin
         - CBOW
         - Skip-Gram
         - Why does it occur Imbalance overhead?
-- **Pytorch**
+- **Pytorch Practice**
     -practicing Word2vec
         - Training Word2Vec through gensim  
 
@@ -215,7 +215,7 @@ Allocate information to the dictionary name_age, which is the age, and then prin
             2) Negative sampling 
         - Additional Performance Enhancement Techniques 
             - Subsampling 
-- **Pytorch**
+- **Pytorch Practice**
     - Calculate Word analogy score by training several cases 
 
 >Assignment 
@@ -225,7 +225,7 @@ Allocate information to the dictionary name_age, which is the age, and then prin
 
 ## *Week 10*
 ---
-- **Practive Algorithms** 
+- **Practice Algorithms** 
     - [practice 1](https://www.acmicpc.net/problem/11650)
     - [practice 2](https://www.acmicpc.net/problem/1463)
 - **Theory of Deep Learning**
@@ -241,11 +241,106 @@ Allocate information to the dictionary name_age, which is the age, and then prin
         - Bidirectional RNN 
         - Limitation of RNN 
         - How to classify Text using RNN 
-- **Pytorch**
+- **Pytorch Practice**
     - Movie review rating prediction using RNN model
 >Assignment 
 1) Target Accuracy 87% by adjusting hyper parameters of RNN 
 
 ## *Week 11*
 ---
+- **Practice Algorithms**
+    - [practice 1](https://programmers.co.kr/learn/courses/30/lessons/43238)
+    - [practice 2](https://programmers.co.kr/learn/courses/30/lessons/43236)
+- **Theory of Deep Learngin**
+    - LSTM (Long Short Term Memory)
+        - limitations of RNN 
+        - concept of LSTM
+            - Cell state?
+            - Gate Mechanism
+                - Forget gate layer
+                - Output gate layer
+                - Input gate layer
+        - Update Old cell state to new cell state
+- **Pytorch Practice**
+    - Text classification using LSTM
+        - Movie review rating prediction using LSTM
+>Assignment 
+1) Target Accuracy 88% by adjusting hyper parameters (feat. LSTM)
+
+## *Week 12*
+---
+- **Practice Algorithms**
+    - [practice 1](https://programmers.co.kr/learn/courses/30/lessons/42576)
+    - [practice 2](https://programmers.co.kr/learn/courses/30/lessons/42578)
+    - [practice 3](https://programmers.co.kr/learn/courses/30/lessons/42579)
+- **Seq2Seq**
+    - About Seq2Seq
+    - Basic NMT (Neural Machine Translation)
+        - Using methods in NMT 
+            1) Beam Search
+            2) Greedy Search 
+- **Pytorch Practice**
+    - Translation based LSTM 
+
+## *Week 13*
+--- 
+- **Using Python**
+    - Crawling of Youtube videos
+        - Use Youtube class that is in Pytube 
+- **Attention mechanism for NMT**
+    - There are three types of Attention mechanism for NMT 
+        1) Basic attention mechanism for NMT
+        2) Multiplicative attention mechanism for NMT
+        3) Additive attention mechanism for NMT 
+    - Simple concept how to image captioning by Attention mechanism 
+- **Pytorch Practice**
+    - Attention mechanism NMT 
+
+## *Week 14*
+- **GAN (Generative Adversarial Network)**
+    - About GAN 
+        - Origin of the name ['Generative', 'Adversarial', 'Network']
+        - About D(Discriminator) & G(Generator)
+            1) Discriminator
+                - Classification network classified as 0 or 1 based on data
+            2) Generator
+                - Distribution approximation function network that similarly expresses the distribution of training data
+        - How to make G and D fight hostile?
+        - Equation?
+                - <img src="C:\Users\USER\Desktop\pytorch\수식설명.PNG" width=300>
+                - If Excellent D, Try to make the equation maximum(0)  
+                - If Excellent G, Try to make the equation minimum(−∞)
+        - There are several types of GAN
+            1) Vanilla GAN
+            - concept
+                    - Use default MLP
+            2) Conditional GAN
+            - concept
+                    - Insert The label that is the correct answer into D & G network together
+                    - Label becomes a condition in the process of achieving its purpose! (both G & D)
+            3) DCGAN
+            - concept 
+                    - Adjust CNN into GAN structure
+                    - Generator uses Transpose Convolutional Network
+                    - Discriminator uses Convolutional Network 
+                    - It has guideline for stable Deep Convolutional GANs
+                    - Operation can be performed using a random number(z)
+            4) Conditional DCGAN
+            - concept
+                    - Conditioanl GAN + Deep Convolutional GAN
+- **Pytorch Practice**
+    - Train all types of GAN and then confirm the results.
+
+## *Week 15*
+- **About Action Recognition**
+
+                    
+
+        
+
+
+
+
+
+
 
