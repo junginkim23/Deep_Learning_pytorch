@@ -94,7 +94,7 @@ int main(){
 
 >수식 표현
 
-$a^2_1 + b^2 = c^2$
+$ a^2_1 + b^2 = c^2 $
 
 $$(\alpha + \beta)^2 = \alpha^2 + 2 \alpha \beta + \beta^2$$
 
